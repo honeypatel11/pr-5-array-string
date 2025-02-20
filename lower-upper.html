@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+    <section>
+
+        <div class="container">
+            <div>
+                <h4>Create a simple webpage that converts a given string to uppercase & lowercase.</h4>
+                <label for="string" class="fw-bold fs-5">Enter The String :- </label>
+                <input type="text" name="string" id="str" placeholder="Enter The String" class="my-3">
+
+
+            </div>
+            <div class="">
+                <button id="btn">lower case</button>
+                <button id="btn1">upper case</button>
+                <button id="btn2">toggle case</button>
+            </div>
+
+            <div>
+                <p class="my-3 fw-bold fs-5" id="con">Convert To String :-</p>
+                <input type="text" name="string" id="ans" placeholder="Enter The String" class="">
+            </div>
+
+        </div>
+    </section>
+
+
+    <script src="./assets/js/jquery.js"></script>
+    <script src="./assets/js/index.js"></script>
+    <script>
+         let name = document.getElementById("str")
+         let ans = document.getElementById("ans")
+       
+        $(document).ready(function () {
+            $("#btn").on("click", function () {
+                let inputText = $("#str").val; 
+                let lowerText = inputText.toLowerCase();
+                $("#ans").val(lowerText);
+
+            })
+            $("#btn1").on("click", function () {
+                let inputText = $("#str").val(); 
+                let upperText = inputText.toUpperCase(); 
+                $("#ans").val(upperText); 
+            });
+            $("#btn2").on("click", function () {
+                let inputText = $("#str").val(); 
+                let upperText = inputText.toUpperCase(); 
+                $("#ans").val(upperText); 
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="./assets/css/style.css">
+   <link rel="stylesheet" href="./assets/css/bootstrap.css">
+</head>
+<body>
+   <section>
+    <div class="container">
+        <div class="pt-4 m-2">
+            <label for="" class="fw-bold fs-5">Enter String :</label>
+            <input type="text" id="name" required>
+            <button class="btn btn-success" id="click">Click Me</button>
+            <div class="fw-bold fs-5">Ans : <span id="ans"></span></div>
+        </div>
+    </div>
+   </section>
+
+    <script src="./assets/js/jquery.js"></script>
+    <script src="./assets/js/index.js"></script>
+    
+
+    <script>
+        let name = document.getElementById("name")
+        let ans = document.getElementById("ans")
+        $(document).ready(function(){
+           $("#click").on("click", function(){
+             
+           })
+        })
+    </script>
+</body>
+</html>
