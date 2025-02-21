@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap.css">
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <div class="pt-4 m-2">
+              <div  class="my-5 text-center">
+                <label for="" class="fw-bold fs-5">Enter String :</label>
+                <input type="text" id="str1" required>
+              </div>
+                <div class="my-5 text-center">
+                    <label for="" class="fw-bold fs-5">Enter String :</label>
+                    <input type="text" id="str2"  required>
+                </div>
+
+
+            </div>
+            <div class="text-center">
+                <button class="btn btn-success" id="click">Click Me</button>
+                <div class="fw-bold fs-5  my-3">Ans : <span id="ans"></span></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./assets/js/jquery.js"></script>
+    <script src="./assets/js/index.js"></script>
+
+
+    <script>
+        function anagrams() {
+            let val1 = document.getElementById("str1").value.toLowerCase();
+            let val2 = document.getElementById("str2").value.toLowerCase();
+
+            let sort1 = val1.split("").sort().join("");
+            let sort2 = val2.split("").sort().join("");
+
+            if (sort1 === sort2) {
+                document.getElementById("ans").innerHTML = "It's Anagram !";
+            } else {
+                document.getElementById("ans").innerHTML = "It's Not  Anagram !";
+            }
+
+        }
+        $(document).ready(function () {
+            $("#click").on("click", function () {
+                anagrams();
+            })
+        })
+    </script>
+</body>
+
+</html>

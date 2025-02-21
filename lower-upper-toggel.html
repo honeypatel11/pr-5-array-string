@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap.css">
+</head>
+
+
+<body>
+    <section>
+        <div class="container my-5">
+            <div class="text-center">
+                <div class="">
+                    <h2 class="fw-bold">Converts Uppercase & Lowercase & Toggelcase.</h2>
+                   <div class="fw-bold fs-5 my-4">
+                    <label for="str" class="fs-5">Enter The String :- </label>
+                    <input type="text" name="string" id="val" placeholder="Enter The String" class="fw-bold fs-5 my-4">
+                   </div>
+                </div>
+                <div class="my-4">
+                    <button id="btn"  class="btn btn-danger  text-white fw-bold">Lower case</button>
+                    <button id="btn1" class="btn btn-danger text-white fw-bold">Upper case</button>
+                    <button id="btn2"  class="btn btn-success  text-white fw-bold">Toggle Case</button>
+                </div>
+    
+                <div class="my-4">
+                    <label for="ans" class="my-3 fw-bold fs-5">Converted String :-</label>
+                    <input type="text" name="string" id="ans" placeholder="Converted String" class="fw-bold fs-5 my-4">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./assets/js/jquery.js"></script>
+    <script src="./assets/js/index.js"></script>
+    <script>
+        let value = document.getElementById("val")
+        let answer = document.getElementById("ans")
+
+        function upper(val) {
+            let inputstring = val;
+            let upperText = inputstring.toUpperCase();
+            answer.value = upperText;
+        }
+
+        function lower(val) {
+            let inputstring = val;
+            let lowerText = inputstring.toLowerCase();
+            answer.value = lowerText;
+        }
+ 
+        function toggle(val) {
+            let inputStr = val;
+            let toggleStr = "";
+
+            for(let i = 0; i < inputStr.length; i++){
+                let char = inputStr[i];
+                if(char === char.toUpperCase()){
+                    toggleStr += char.toLowerCase();
+                } else {
+                    toggleStr += char.toUpperCase();
+                }
+            }
+            answer.value = toggleStr;
+        }
+
+        $(document).ready(function () {
+            $("#btn").on("click", function () {
+                lower(value.value);  
+            });
+            $("#btn1").on("click", function () {
+                upper(value.value);
+            });
+           
+
+            $("#btn2").on("click", function (){
+                toggle(value.value);
+            })
+        });
+    </script>
+</body> 
+</html>
+
+</body>
+
+</html>

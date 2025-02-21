@@ -1,36 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-   <link rel="stylesheet" href="./assets/css/style.css">
-   <link rel="stylesheet" href="./assets/css/bootstrap.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap.css">
 </head>
+
 <body>
-   <section>
-    <div class="container">
-        <div class="pt-4 m-2">
-            <label for="" class="fw-bold fs-5">Enter String :</label>
-            <input type="text" id="name" required>
-            <button class="btn btn-success" id="click">Click Me</button>
-            <div class="fw-bold fs-5">Ans : <span id="ans"></span></div>
+    <section>
+        <div class="container">
+            <h2 class="fw-bold text-center my-5">Vowel & Consonants !</h2>
+            <div class="pt-4 my-5 text-center">
+                <label for="name" class="fw-bold fs-5">Enter String :</label>
+                <input type="text" id="name" required>
+
+            </div>
+            <div class="text-center my-3">
+                <button class="btn btn-success" id="click">Click Me</button>
+                <div class="fw-bold fs-5 my-4">Ans : <span id="ans"></span></div>
+            </div>
         </div>
-    </div>
-   </section>
+    </section>
 
     <script src="./assets/js/jquery.js"></script>
     <script src="./assets/js/index.js"></script>
-    
 
     <script>
-        let name = document.getElementById("name")
-        let ans = document.getElementById("ans")
-        $(document).ready(function(){
-           $("#click").on("click", function(){
-             
-           })
-        })
+        function countVowelsConsonants() {
+            let name = document.getElementById("name").value.toLowerCase();
+            let vowels = "aeiou";
+            let vowelCount = 0, consonantCount = 0;
+
+            for (let char of name) {
+                if (vowels.includes(char)) {
+                    vowelCount++;
+                } else if (char >= 'a' && char <= 'z') {
+                    consonantCount++;
+                }
+            }
+            document.getElementById("ans").innerHTML = name
+                ? `Vowels: <b>${vowelCount}</b> 😍 Consonants: <b>${consonantCount}</b>`
+                : "Please enter some text!";
+        }
+
+        $(document).ready(function () {
+            $("#click").on("click", function () {
+                countVowelsConsonants();
+            });
+        });
     </script>
 </body>
+
 </html>

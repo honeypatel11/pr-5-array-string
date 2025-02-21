@@ -10,14 +10,14 @@
 <body>
    <section>
     <div class="container">
+        <h1 class="text-center my-3 fs-3 fw-bold">Longest Word !</h1>
         <div class="pt-4 my-5 text-center">
-            <label for="" class="fw-bold fs-5">Enter String :</label>
+            <label for="name" class="fw-bold fs-5">Enter String :</label>
             <input type="text" id="name" required>
-          
+           
         </div>
-        <div class="text-center">
+        <div class="text-center my-3">
             <button class="btn btn-success" id="click">Click Me</button>
-    
             <div class="fw-bold fs-5 my-3">Ans : <span id="ans"></span></div>
         </div>
     </div>
@@ -31,19 +31,23 @@
         let name = document.getElementById("name")
         let ans = document.getElementById("ans")
 
-        function palinedrome(name){
-            let arr = [];
-            arr = name;
-           if(name !== name.split('').reverse('').join('')){
-            ans = document.getElementById("ans").innerHTML = `It's Not Palindrome String ! `;
-           }else{
-             ans = document.getElementById("ans").innerHTML = `It's Palinedrome String !`;
-           }
-        }
 
+        function longestword(name){
+            let inputstr = document.getElementById("name").value;
+            let word = inputstr.split(" ");
+            let longestword = "";
+
+            for(let i = 0; i < word.length; i++){
+                let cleanword = word[i].replace(" ");
+                if(cleanword.length > longestword.length){
+                    longestword = cleanword ;
+                }
+            }
+            document.getElementById("ans").innerHTML = longestword;
+        }
         $(document).ready(function(){
            $("#click").on("click", function(){
-              palinedrome(name.value);
+             longestword(name);
            })
         })
     </script>
